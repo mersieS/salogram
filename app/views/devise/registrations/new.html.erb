@@ -1,0 +1,62 @@
+<div class="container home-sections d-flex flex-row justify-content-center align-items-center">
+    <div class="login-section pt-3">
+        <div class="card text_center pt-5 mx-auto" style="width: 25rem;">
+            <%= image_tag 'logo.png', class: "card-img-top"%>
+            <div class="row justify-content-center">
+              <div class="col-md-8 text-center">
+                <p class="fw-bold text_secondary">Salogramda takılmak ve yeni kankiler edinmek için hesap oluştur</p>
+              </div>
+            </div>
+
+
+            <a href='#' class="fs-6 d-block my-4 text-decoration-none fw-bold bg-primary text-white rounded w-75 align-self-center p-1">
+                <div class="text-center">
+                    <%= image_tag("facebook.svg", class: "facebook")%>
+                    Facebook ile giriş yap
+                </div>
+            </a>
+
+
+            <div class="d-flex align-items-center justify-content-center mt-4">
+                <div>Ya Da</div>
+            </div>
+
+                <% if notice %>
+                    <p class="notice"><%= notice %></p>
+                <% elsif alert %>
+                    <p class="notice"><%= alert %></p>
+                <% end %>
+
+            <div class="card-body">
+
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <div class="mb-3 mt-4">
+                    <%= f.email_field :email, class: "form-control", placeholder: "Tel No veya E-mail"  %>
+                </div>
+                <div class="mb-3 mt-4">
+                    <%= f.text_field :full_name, class: "form-control", placeholder: "İsim Soyisim"  %>
+                </div>
+                <div class="mb-3 mt-4">
+                    <%= f.text_field :username, class: "form-control", placeholder: "Kullanıcı Adı"  %>
+                </div>
+                <div class="mb-3">
+                    <%= f.password_field :password, class: "form-control", placeholder: "Şifre"%>
+                </div>
+                <div class="mb-3">
+                    <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Şifre Doğrulama"%>
+                </div>
+                <%= f.submit "Hesap Oluştur", class: "btn btn-primary w-100" %>
+            <% end %>
+
+            </div>
+        </div>
+
+        <div class="card text-center py-2 mt-3 mx-auto" style="width: 25rem;">
+            <div class="card-text">
+                Hesabın var mı?
+                <%= link_to "Giriş Yap", new_user_session_path, class: "fs-6 my-4 text-decoration-none text-info"%>
+            </div>
+        </div>
+    </div>
+</div>
+

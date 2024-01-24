@@ -1,0 +1,50 @@
+<div class="container home-sections d-flex flex-row justify-content-center align-items-center">
+    <div class="images-section pt-3 d-none d-lg-block"></div>
+
+    <div class="login-section pt-3">
+        <div class="card text_center pt-5" style="width: 25rem;">
+            <%= image_tag 'logo.png', class: "card-img-top"%>
+            <div class="card-body">
+
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div class="mb-3 mt-4">
+                    <%= f.email_field :email, class: "form-control", placeholder: "E-mail"  %>
+                </div>
+                <div class="mb-3">
+                    <%= f.password_field :password, class: "form-control", placeholder: "Şifre"%>
+                </div>
+                <%= f.submit "Giriş Yap", class: "btn btn-primary w-100" %>
+            <% end %>
+
+                <div class="d-flex align-items-center justify-content-center mt-4">
+                    <div>Ya Da</div>
+                </div>
+
+                <% if notice %>
+                    <p class="notice"><%= notice %></p>
+                <% elsif alert %>
+                    <p class="notice"><%= alert %></p>
+                <% end %>
+
+                <div class="text-center">
+                  <a href='#' class="fs-6 d-block my-4 text-decoration-none fw-bold">
+                      <%= image_tag("facebook.svg", class: "facebook")%>
+                      Facebook ile giriş yap
+                  </a>
+
+                  <a href='#' class="fs-6 d-block my-4 text-decoration-none">Şifreni mi unuttun?</a>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="card text-center py-2 mt-3" style="width: 25rem;">
+            <div class="card-text">
+                Hesabın yok mu?
+                <%= link_to "Hesap oluştur", new_user_registration_path, class: "fs-6 my-4 text-decoration-none text-info"%>
+            </div>
+        </div>
+    </div>
+</div>
+

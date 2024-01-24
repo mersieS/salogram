@@ -1,0 +1,5 @@
+<h1>Home Page</h1>
+
+<% if current_user %>
+<%= button_to "Çıkış Yap", destroy_and_redirect_session_path, method: :delete %>
+<% end %>
