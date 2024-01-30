@@ -37,6 +37,10 @@ gem "jbuilder"
 gem 'bootstrap', '~> 5.3.2'
 gem 'dartsass-sprockets'
 gem 'devise'
+gem 'therubyracer'
+gem 'mini_racer'
+
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
