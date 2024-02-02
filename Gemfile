@@ -39,6 +39,7 @@ gem 'dartsass-sprockets'
 gem 'devise'
 gem 'therubyracer'
 gem 'mini_racer'
+gem "font-awesome-sass", "~> 6.5.1"
 
 
 
