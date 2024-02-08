@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: "salo"
+      POSTGRES_PASSWORD: "1013346244"
+      POSTGRES_DB: "salogram_development"
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  web:
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    volumes:
+      - .:/usr/src/app
+    environment:
+      DATABASE_URL: postgres://salo:1013346244@db:5432/salogram_development
+
+volumes:
+  pgdata:

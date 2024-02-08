@@ -12,7 +12,7 @@ ENV RAILS_ENV="production" \
     BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
     BUNDLE_WITHOUT="development" \
-    SECRET_KEY_BASE="0a703970beefdde21107484b84252226a8f62bcbfedab24bf80b318702439a1dde4535b5bf3c8215ac3d96eff557e18fe2ff810f0a8da9ba4af145832a8327e1"
+    SECRET_KEY_BASE="03ef2a5949676f23edf692386206e43583b8fc9e76187ad9c69c8e845367fc317e9291cb8598bfc8a6884811558e0c660871316b1cb029e372b79750dcb8b4c3"
 
 # Throw-away build stage to reduce size of final image
 FROM base as build

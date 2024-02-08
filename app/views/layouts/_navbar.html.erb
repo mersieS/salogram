@@ -28,11 +28,22 @@
 
             <i class="fa-regular fa-heart fa-xl"></i>
 
-            <% if current_user && current_user.profile_picture.attached? %>
-                <%= image_tag current_user.profile_picture, class: "img-thumbnail rounded-circle", style: "width: 2.5rem"%>
-            <% else %>
-                <%= image_tag 'default_user.png', class: "img-thumbnail rounded-circle", style: "width: 2.5rem"%>        
-            <% end %>
+            <div class="dropdown">
+            <a class="text-dark fs-4" style="text-decoration:none" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <% if current_user && current_user.profile_picture.attached? %>
+                    <%= image_tag current_user.profile_picture, class: "img-thumbnail rounded-circle", style: "width: 2.5rem"%>
+                <% else %>
+                    <%= image_tag 'default_user.png', class: "img-thumbnail rounded-circle", style: "width: 2.5rem"%>        
+                <% end %>
+            </a>
+
+            <ul class="dropdown-menu">
+              <li>
+                <%= button_to 'Çıkış Yap', destroy_and_redirect_session_path, class: "dropdown-item", method: :delete%>
+              </li>
+            </ul>
+          </div>
+
         </div>
     </div>
   </div>
