@@ -22,10 +22,10 @@
 
             <i class="fa-solid fa-message fa-xl"></i>
 
-            <%= link_to new_post_path, class: "text-dark" do%>
-                <i class="fa-regular fa-square-plus fa-xl"></i>
-            <% end %>
-
+            <a type="button" class="text-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <i class="fa-regular fa-square-plus fa-xl"></i>
+            </a>
+            
             <i class="fa-regular fa-heart fa-xl"></i>
 
             <div class="dropdown">
@@ -48,3 +48,5 @@
     </div>
   </div>
 </nav>
+
+<%= render 'posts/form', post: Post.new %>
