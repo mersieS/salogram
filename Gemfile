@@ -41,6 +41,7 @@ gem 'therubyracer'
 gem 'mini_racer'
 gem "font-awesome-sass", "~> 6.5.1"
 gem 'filepond-rails'
+gem 'activestorage-validator'
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
